@@ -51,29 +51,6 @@ st.markdown("<h3 style='text-align: center; color: #2196F3;'>Created by Shyam Tr
 # Adding an image or logo at the top-left corner
 st.image("./S#S.png", width=100)  # Replace with your image URL
 
-# Adding a second logo at the top-right corner using custom CSS
-st.markdown("""
-    <style>
-        .logo-top-right {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            width: 100px;  /* Adjust the size as needed */
-            z-index: 1000;
-        }
-            
-        .logo-left-right {
-            position: fixed;
-            top: 10px;
-            left: 10px;
-            width: 100px;  /* Adjust the size as needed */
-            z-index: 1000;
-        }
-    </style>
-    <img class="logo-top-right" src="./edunet.png" alt="Logo">  
-    <img class="logo-left-right" src="./TechSaksham.jpg" alt="Logo">
-""", unsafe_allow_html=True)
-
 # Input for SMS text with styling
 input_sms = st.text_area("Enter the SMS below:", height=100, placeholder="Type the SMS here...", max_chars=500)
 
