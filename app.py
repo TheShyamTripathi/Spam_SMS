@@ -40,14 +40,44 @@ except FileNotFoundError as e:
     st.stop()
 
 # Streamlit app interface
-st.title("SMS Spam Detection Model")
-st.write("*Created by Shyam Tripathi*")
+st.set_page_config(page_title="SMS Spam Detection", page_icon="📱", layout="centered")
+st.markdown("<h1 style='text-align: center; color: #4CAF50;'>SMS Spam Detection Model</h1>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: #2196F3;'>Created by Shyam Tripathi</h3>", unsafe_allow_html=True)
 
-# Input for SMS text
-input_sms = st.text_area("Enter the SMS", height=100)
+# Adding an image or logo at the top-left corner
+st.image("./S#S.png", width=50)  # Replace with your image URL
 
-# Predict button
-if st.button('Predict'):
+# Adding a second logo at the top-right corner using custom CSS
+st.markdown("""
+    <style>
+        .logo-top-right {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 100px;  /* Adjust the size as needed */
+            z-index: 1000;
+        }
+            
+        .logo-left-right {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            width: 100px;  /* Adjust the size as needed */
+            z-index: 1000;
+        }
+    </style>
+    <img class="logo-top-right" src="./edunet.png" alt="Logo">  
+    <img class="logo-left-right" src="./TechSaksham.jpg" alt="Logo">
+""", unsafe_allow_html=True)
+
+# Input for SMS text with styling
+input_sms = st.text_area("Enter the SMS below:", height=150, placeholder="Type the SMS here...", max_chars=500)
+
+# Add some spacing
+st.markdown("<br>", unsafe_allow_html=True)
+
+# Predict button with custom style
+if st.button('🔍 Predict', key="predict_button", help="Click to predict if the SMS is Spam or Not Spam"):
     # Check if input is valid
     if not input_sms.strip():
         st.error("Please enter a valid SMS!")
@@ -61,8 +91,15 @@ if st.button('Predict'):
         # Predict using the model
         result = model.predict(vector_input)[0]
         
-        # Display the result
+        # Display the result with enhanced styling
         if result == 1:
-            st.header("🚨 Spam")
+            st.markdown("<h3 style='text-align: center; color: red;'>🚨 Spam Message Detected!</h3>", unsafe_allow_html=True)
+            st.balloons()  # Optional: Adds a balloon effect to indicate spam
         else:
-            st.header("✅ Not Spam")
+            st.markdown("<h3 style='text-align: center; color: green;'>✅ Not Spam</h3>", unsafe_allow_html=True)
+
+# Add some spacing
+st.markdown("<br><br>", unsafe_allow_html=True)
+
+# Footer section
+st.markdown("<footer style='text-align: center; font-size: 12px; color: #555;'>Built with ❤️ by Shyam Tripathi</footer>", unsafe_allow_html=True)
