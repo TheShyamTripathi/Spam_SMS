@@ -41,11 +41,15 @@ except FileNotFoundError as e:
 
 # Streamlit app interface
 st.set_page_config(page_title="SMS Spam Detection", page_icon="📱", layout="centered")
+# Adding an image or logo at the top-left corner
+st.image("edunet.png")
+# Adding an image or logo at the top-left corner
+st.image("./TechSaksham.jpg", width=250)
 st.markdown("<h1 style='text-align: center; color: #4CAF50;'>SMS Spam Detection Model</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center; color: #2196F3;'>Created by Shyam Tripathi</h3>", unsafe_allow_html=True)
 
 # Adding an image or logo at the top-left corner
-st.image("./S#S.png", width=50)  # Replace with your image URL
+st.image("./S#S.png", width=100)  # Replace with your image URL
 
 # Adding a second logo at the top-right corner using custom CSS
 st.markdown("""
@@ -71,7 +75,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Input for SMS text with styling
-input_sms = st.text_area("Enter the SMS below:", height=150, placeholder="Type the SMS here...", max_chars=500)
+input_sms = st.text_area("Enter the SMS below:", height=100, placeholder="Type the SMS here...", max_chars=500)
 
 # Add some spacing
 st.markdown("<br>", unsafe_allow_html=True)
@@ -102,4 +106,4 @@ if st.button('🔍 Predict', key="predict_button", help="Click to predict if the
 st.markdown("<br><br>", unsafe_allow_html=True)
 
 # Footer section
-st.markdown("<footer style='text-align: center; font-size: 12px; color: #555;'>Built with ❤️ by Shyam Tripathi</footer>", unsafe_allow_html=True)
+st.markdown("<footer style='text-align: center; font-size: 22px; color: #222;'>Built with ❤️ by Shyam Tripathi</footer>", unsafe_allow_html=True)
