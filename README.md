@@ -8,7 +8,7 @@ This project is part of a 1-month AI internship under the **AICTE-Internship** p
 
 ## **Deployed Application**
 Access the deployed application here:  
-👉 [SMS Spam Detection App](https://theshyamtripathi-spam-sms-app-bxktz9.streamlit.app/)
+👉 [SMS Spam Detection App](https://shyamtripathi-spam-sms.streamlit.app/)
 
 ---
 
